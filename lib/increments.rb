@@ -3,9 +3,8 @@ module Increments
 		options = default_options.merge(opts)
         validate(options)
         min, max = options[:min], [options[:min] + options[:increment]-1, options[:max]].min
-    	until max > options[:max]
+    	until max >= options[:max]
     		yield(min,max)
-    		break if max >= options[:max]
     		min = [min + options[:increment], options[:max]].min # Never exceed specified maximum
     		max = [max + options[:increment], options[:max]].min
     	end
