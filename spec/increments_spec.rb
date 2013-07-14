@@ -28,6 +28,17 @@ describe Increments do
           (max-min <= @options[:increment]).should be_true
         end
       end
+      it "should not have overlapping range values" do
+        range_values = []
+        Increments.increment(@options) do |min,max|
+          range_values << min << max
+          (min <= @options[:max]).should be_true
+          (max <= @options[:max]).should be_true
+          (min <= max).should be_true
+          (max-min <= @options[:increment]).should be_true
+        end
+        range_values.uniq.size.should == range_values.size
+      end
     end
     
     describe "failure" do
@@ -66,6 +77,17 @@ describe Increments do
           (max-min <= @options[:increment]).should be_true
         end
       end
+      it "should not have overlapping range values" do
+        range_values = []
+        Increments.decrement(@options) do |min,max|
+          range_values << min << max
+          (min <= @options[:max]).should be_true
+          (max <= @options[:max]).should be_true
+          (min <= max).should be_true
+          (max-min <= @options[:increment]).should be_true
+        end
+        range_values.uniq.size.should == range_values.size
+      end
     end
     
     describe "failure" do
@@ -74,7 +96,6 @@ describe Increments do
           Increments.decrement(@options)
         end.should raise_error(LocalJumpError,"no block given (yield)")
       end
-
       it "should throw an error when passed without an invalid min and max" do
         @options[:min] = 10000
         @options[:max] = 9999

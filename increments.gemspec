@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'increments'
-  s.version     = '0.0.3'
-  s.date        = '2013-07-13'
+  s.version     = '1.0.1'
+  s.date        = '2013-07-14'
   s.description = "Range bound incrementing and decrementing by a specified amount"
   s.summary     = s.description
   s.authors     = ["Garren Staubli"]
