@@ -2,7 +2,7 @@ module Increments
 	def self.increment(opts={},&block)
 		options = defaults.merge(opts)
         validate(options,&block)
-        step_enum(options) do |min|
+        step_enum(options).each do |min|
 			yield(min,range_max(min,options))
 		end
 	end
