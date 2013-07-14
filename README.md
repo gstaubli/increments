@@ -8,7 +8,7 @@ Providing a min of 0, max of 100000, and an increment of 10000, your output woul
 		puts "Min: #{min} - Max: #{max}"
 	end
 
-	\# => Min: 0 - Max: 9999
+	# => Min: 0 - Max: 9999
 		 Min: 10000 - Max: 19999
 		 Min: 20000 - Max: 29999
 		 Min: 30000 - Max: 39999
@@ -24,7 +24,7 @@ Providing a min of 0, max of 100000, and an increment of 10000, your output woul
 		puts "Min: #{min} - Max: #{max}"
 	end
 
-	\# => Min: 90001 - Max: 100000
+	# => Min: 90001 - Max: 100000
 		  Min: 80001 - Max: 90000
 		  Min: 70001 - Max: 80000
 		  Min: 60001 - Max: 70000
