@@ -10,8 +10,12 @@ module Increments
 	def self.decrement(opts={},&block)
 		options = defaults.merge(opts)
 		validate(options,&block)
-		step_enum(options).reverse_each do |min|
-			yield(min,range_max(min,options))
+		min, max = [options[:min], options[:max] - options[:increment]+1].max, options[:max]
+		loop do
+			yield(min,max)
+			break if min == options[:min]
+			min = [min - options[:increment], options[:min]].max
+			max = [max - options[:increment], options[:min]].max
 		end
 	end
 
@@ -26,11 +30,9 @@ module Increments
 		end
 
 		def self.defaults
-			{
-				:min => 0, 
-				:max => 4294967295, 
-	            :increment => 100000 
-	        }
+			{ :min 		 => 0, 
+			  :max 		 => 4294967295, 
+	          :increment => 100000 }
 		end
 
 		def self.validate(options)
