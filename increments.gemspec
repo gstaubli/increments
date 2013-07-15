@@ -8,4 +8,5 @@ Gem::Specification.new do |s|
   s.email       = 'gstaubli@demandbase.com'
   s.files       = ["lib/increments.rb"]
   s.homepage    = 'https://github.com/gstaubli/increments'
+  s.license		= 'MIT'
 end
