@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'increments'
-  s.version     = '1.0.2'
+  s.version     = '1.0.3'
   s.date        = '2013-07-14'
   s.description = "Range bound incrementing and decrementing by a specified amount"
   s.summary     = s.description
