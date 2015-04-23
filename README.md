@@ -4,7 +4,7 @@ This Gem intends to provide a simple way to handle range bound incrementing and 
 ### Usage
 Providing a min of 0, max of 100000, and an increment of 10000, your output would be as follows:
 
-	Increments.increment(:min => 0, :max => 100000, :increment => 10000) do |min,max|
+	Increments.increment(:min => 0, :max => 100_000, :increment => 10_000) do |min,max|
 		puts "Min: #{min} - Max: #{max}"
 	end
 
@@ -20,7 +20,7 @@ Providing a min of 0, max of 100000, and an increment of 10000, your output woul
 		 Min: 90000 - Max: 99999
 		 Min: 100000 - Max: 100000
 
-	Increments.decrement(:min => 0, :max => 100000, :increment => 10000) do |min,max|
+	Increments.decrement(:min => 0, :max => 100_000, :increment => 10_000) do |min,max|
 		puts "Min: #{min} - Max: #{max}"
 	end
 
